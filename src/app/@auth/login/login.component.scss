@@ -1,0 +1,12 @@
+app-login {
+  .logo {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+  }
+
+  .form-control-group {
+    margin-bottom: 1rem !important;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

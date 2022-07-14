@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:[PORT]',
+  basic: 'Basic Auth for first login',
+  loginEndpoint: '/auth/login',
+  logoutEndpoint: '/auth/logout',
+  refreshTokenEndpoint: '/auth/refreshToken',
+  requestPasswordEndpoint: '/auth/requestPassword',
+  resetPasswordEndpoint: '/auth/resetPassword'
 };
 
 /*

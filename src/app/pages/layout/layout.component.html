@@ -1,0 +1,31 @@
+<nb-layout [withScroll]="true" [restoreScrollTop]="true">
+  <nb-layout-header fixed>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-between">
+        <div class="col-8 col-sm-6 ">
+          <button nbButton size="tiny" class="mt-0" (click)="sidebarComponent.toggle(true)">
+            <i class="fas fa-bars fa-2x mt-2"></i>
+            <img src="assets/img/logo-rlima-h.png" alt="Logo Rlima" class="logo" />
+          </button>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+          <ng-container *ngIf="user">
+            <nb-user class="umaLinha" [name]="user.nome | titlecase" [title]="user.email | titlecase"
+              [nbContextMenu]="items" nbContextMenuTag="perfil" [onlyPicture]="utils.getViewport() === 'xs'"
+              [picture]="user.avatar"></nb-user>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" responsive="true" #sidebarComponent>
+    <nb-menu [items]="menuItems" autoCollapse (click)="collapseSidebar()" tag="menuPrincipal" #menuPrincipal></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column [class.sidebarCompacted]="sidebarComponent.state == 'compacted'" [class.withoutSidebar]="sidebarComponent.state == 'collapsed'" [class.sidebarExpanded]="sidebarComponent.state == 'expanded'">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer>
+    <div class="al-copy">&copy; <a target="_blank" href="https://rlimainfo.com.br">Rlima Info</a>
+      {{ano}}</div>
+  </nb-layout-footer>
+</nb-layout>

@@ -1,0 +1,28 @@
+<div class="tela d-flex align-items-center">
+  <div class="container">
+    <div class="row mt-5 d-flex justify-content-center">
+      <div class="col-8 text-center text-danger">
+        <fa-icon [icon]="icons.faMap" size="8x"></fa-icon>
+      </div>
+    </div>
+    <div class="row mb-2 d-flex justify-content-center">
+      <div class="col-8 text-center text-danger">
+        <h1 class="text-danger">Fora do Mapa!</h1>
+      </div>
+    </div>
+    <div class="row mb-2 d-flex justify-content-center">
+      <div class="col-8 text-center">
+        Infelizmente o conteúdo que deseja acessar não existe! <br />
+        Favor verifique com o administrador uma solução.
+      </div>
+    </div>
+    <div class="row mt-5 d-flex justify-content-center">
+      <div class="col-md-6">
+        <button nbButton fullWidth size="medium" status="info" appearance="hero" [routerLink]="'/'">
+          <fa-icon [icon]="icons.faHome" class="mr-2"></fa-icon>
+          Voltar ao início
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
